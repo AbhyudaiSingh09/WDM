@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>   
+    <title> Assignment 1 </title>
+    <meta charset="UTF-8">  
+    <link rel="stylesheet" href="stylesheet2.css" />
+<style>
+
+    .item1{ grid-area: header;}
+    .tem2{ grid-area: main;}
+    .item3{ grid-area: footer;}
+
+    .grid-container{
+        display: grid;
+        grid-template-areas: 
+        'Top Top Top Top Top Top'
+        'Middle Middle Middle Middle Middle Middle'
+        'Bottom Bottom Bottom Bottom Bottom Bottom';
+        gap: 10px;
+        background-color: #fff;
+        padding: 10px;
+    }
+
+    .grid-container> div{
+        background-color: #fff;
+        text-align: center;
+        padding: 20px 0;
+        font-size: 30px;
+    }
+
+    .grid-container input{
+        width:100%;
+        padding: .5em;
+        border-radius: 2em;
+    }
+
+    .grid-container button{
+        width:100%;
+        padding: .5em;
+        border-radius: 2em;
+        margin: 2%;
+        cursor: pointer;
+        background-color: black;
+        color: #fff;
+    }
+
+    .grid-container p{
+        font-family: cursive;
+    }
+
+
+
+
+</style>
+</head>
+<body>
+    <header>
+        <H1 class="contact-H1"> Contact Us </H1>
+    </header>
+    <div class="grid-container">
+        <div class="item1"> </div>
+        <div class="item2"> 
+            <form>
+                <input type="text" placeholder="Full Name">
+                <input type="email" placeholder="Email" required>
+                <button type="submit" value="Submit"> Submit </button> 
+            </form>
+        </div>
+        <div class="item3">
+            <p>Our Officials will contact you in next 24 hours.</p>
+        </div>
+
+
+    <footer>
+
+        
+
+    </footer>
+</body>
+</html>
