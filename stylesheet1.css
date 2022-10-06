@@ -7,7 +7,7 @@ body{
 
 .topnav {
     overflow: hidden;
-    background-color: transparent;
+    background-color: White;
 }
 
 .topnav a{
@@ -27,7 +27,7 @@ body{
     color:rgb(250, 248, 248)
 }
 
-
+/********************************************************************************/
 
 /* Home page  css */
 
@@ -42,7 +42,7 @@ body{
     font-size: 70px;
     font-family: cursive;
     font-style: italic;
-    color:rgb(0, 0, 0)
+    color:rgb(255, 255, 255)
 }
 
 .invisiblehr{
