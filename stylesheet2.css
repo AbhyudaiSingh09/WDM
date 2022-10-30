@@ -111,8 +111,8 @@ body{
     border-top: 0;
     border-bottom: 0;
     outline: none;
-    background: transparent;
-    color: #fff;
+    background: white;
+    color: black ;
     font-size: 14px;
     font-family:Verdana, Geneva, Tahoma, sans-serif
 }
@@ -153,18 +153,22 @@ span{
 }
 
 .input-field::placeholder{
-    color: #fff;
+    color: black ;
 }
 
 .input-field::-webkit-input-placeholder{
-    color: #fff;
+    color: black;
 }
 
 .input-field::-moz-placeholder{
-    color:#fff
+    color:black;
 }
 .input-field::-ms-placeholder{
-    color: #fff;
+    color: black;
+}
+
+.your-class::-webkit-input-placeholder{
+    color: black;
 }
 
 .tooltip{

@@ -62,7 +62,13 @@
         font-family: cursive;
     }
 
+    .hide{
+        display: none;
+    }
 
+    .show{
+        display: block;
+    }
 
 
 </style>
@@ -77,8 +83,59 @@
             <form>
                 <input type="text" placeholder="Full Name">
                 <input type="email" placeholder="Email" required>
+                <textarea rows="4" cols="60" onkeypress="auto_grow(this);" onkeyup="auto_grow(this);" style="margin: top 20px; resize:none;overflow:hidden;"></textarea>
+                <H3>Select time to callback</H3>
+                <H6>Choose your Day type</H6>
+                <input type="radio"  value="Weekday" name="Day1" onclick="onLoad()">
+                <label for="size1"> Weekday</label>
+                <input type="radio"  value="Weekend" name="Day2" onclick="onLoad2()">
+                <label for="size1"> Weekend</label>
+                <H6>Choose your Day</H6>
+                <div id="group1"  class="hide">
+                <select>
+                <option> Monday </option>
+                <option> Tuesday </option>
+                <option> Wednesday </option>
+                <option> Thursday </option>  
+                </select>
+                </div>
+                <div id="group2"  class="hide">
+                <select>
+                <option> Saturday </option>
+                <option> Sunday </option>
+                </select>
+                </div>
                 <button type="submit" value="Submit"> Submit </button> 
             </form>
+            <!--10=text arear fit as per text growth -->
+            <script type="text/javascript">
+                function auto_grow(element){
+                    element.style.height="5px";
+                    element.style.height=(element.scrollHeight)+"px";
+                }
+
+                function onLoad(){
+                    var group1 = document.getElementById("group1")
+                    group1.classList.remove('hide');
+                    group1.classList.add('show');
+
+                    var group2 = document.getElementById("group2")
+                    group2.classList.remove('show');
+                    group2.classList.add('hide');
+                }
+
+                function onLoad2(){
+                    var group2 = document.getElementById("group2")
+                    group2.classList.remove('hide');
+                    group2.classList.add('show');
+
+                    var group1 = document.getElementById("group1")
+                    group1.classList.remove('show');
+                    group1.classList.add('hide');
+                }
+
+
+            </script>    
         </div>
         <div class="item3">
             <p>Our Officials will contact you in next 24 hours.</p>
