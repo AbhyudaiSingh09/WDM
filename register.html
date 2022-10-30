@@ -3,16 +3,25 @@
 <head>   
     <title> Register </title>
     <meta charset="UTF-8">  
-    <link rel="stylesheet" href="stylesheet1.css" />
-<style>
-    .hellobox{
-        height: auto;
-        width: fit-content;
-        background-color: rgb(19, 19, 25);
-        color: aliceblue;
-        align-items: left;
-        transform: rotate(15deg);
+    <link rel="stylesheet" href="stylesheet2.css" />
+    <script type="text/javascript">
+
+    function phone_number_validate()
+    {
+        var phone_number = document.getElementById("ph_number").value;
+        var ph_regx= /\d{3}-?\d{3}-?\d{4}/
+        if(ph_regx.text(phone_number))
+        {
+            alert("matched");
+        }
+        else
+        {
+            alert("Incorrect format")
+        }
     }
+    </script>
+<style>
+
 </style>
 </head> 
 <body>
@@ -39,17 +48,81 @@
                 <a href="https://www.google.com"><img src= "static/google image.png" width="30" height="30"></a>
                 <a href="https://www.twitter.com"><img src= "static/twitterimage.png" width="30" height="30"></a>
             </div>
-            <form id="register" class= "input-group">
-                <input type= "email"  class="input-field" placeholder="Email Id" required>
-                <input type= "password"  class="input-field" placeholder="Password" required>
-                <input type= "checkbox"  class="check-box"><span>I agree to the terms & conditions</span>    
-                <button type="submit" class=" submit-btn">Register</button>   
+            <form id="register" class= "input-group"> 
+               <div class = "tooltip">
+                    <input id="fname" type= "text"  class="input-field" placeholder="First Name" required /> 
+                    <span class="tooltiptext"> Only alphabets A-Z or a-z accepted </span>
+                </div>
+                <div class = "tooltip">
+                    <input id="lname" type= "text"  class="input-field" placeholder="Last Name" required>
+                    <span class="tooltiptext"> Only alphabets A-Z or a-z accepted </span>
+                </div> 
+                <div class = "tooltip">
+                    <input type= "text"  class="input-field" placeholder="Street Name" required>
+                    <span class="tooltiptext"> Only alphabets A-Z or a-z accepted </span>
+                </div>
+                <div class = "tooltip">
+                    <input type= "number"  class="input-field" placeholder="Apartment" required>
+                    <span class="tooltiptext"> Only 0-9 number accepted </span>
+                </div>
+                <div class = "tooltip">
+                    <input type= "text"  class="input-field" placeholder="City" required>
+                    <span class="tooltiptext"> Only alphabets A-Z or a-z accepted </span>
+                </div>        
+                <div class = "tooltip">
+                    <input type= "text"  class="input-field" placeholder="State" required>
+                    <span class="tooltiptext"> Only alphabets A-Z or a-z accepted </span>
+                </div>
+                <div class = "tooltip">
+                    <input type= "number"  class="input-field" placeholder="Area Code(Zip Code)" required>
+                    <span class="tooltiptext"> Only 0-9 number accepted </span>
+                </div>
+               <div class = "tooltip">    
+                    <input type= "tel"  id = "ph_number" class="input-field" placeholder="Phone Number" required>
+                    <span class="tooltiptext"> Only 0-9 number accepted in format 123-123-1234 </span>
+                </div>
+                <br>
+               <div class = "tooltip">      
+                    <label class="input-field">Please select your Date of Birth </label> 
+                    <input type= "date"  class="input-field" placeholder="D.O.B" required>
+                    <span class="tooltiptext"> Date accepted in format mm/dd/yyyy </span>
+                </div>
+                <br>
+                <div class = "tooltip">    
+                    <input type= "email"  class="input-field" placeholder="Email Id" required>
+                    <span class="tooltiptext"> 
+                        <ul>
+                            <li> Uppercase and lowercase letters (A-Z and a-z) </li>
+                            <li>Numeric characters (0-9) </li>
+                            <li> Special characters - ! # $ % & ' * + - / = ? ^ _ ` { | } ~ </li>
+                            <li>Period,  dot,  or  full  stop  (.)  with  the  condition  that  it 
+                                cannot be the first or last letter of the email and cannot 
+                                repeat one after another </li>
+                            <li>A valid domain name [for example com, org, net, in, us, 
+                                info]. </li>    
+                        </ul>             
+                    </span>
+                </div>
+                <div class = "tooltip">    
+                    <input type= "password"  class="input-field" placeholder="Password" required>
+                    <span class="tooltiptext"> 
+                        <ul>
+                            <li> A password should be alphanumeric.  </li>
+                            <li>First letter of the password should be capital.  </li>
+                            <li> Special characters - ! # $ % & ' * + - / = ? ^ _ ` { | } ~ </li>
+                            <li>Password  must  contain  a  special  character  (@,  $,  !,  &, 
+                                etc).</li>
+                            <li>Password length must be greater than 8 characters. </li>    
+                            <li>The password fields should not be empty</li>
+                        </ul>             
+                    </span>
+                </div>
+                <br> 
+                <input type= "checkbox"  class="check-box"><span>I agree to the terms & conditions</span> 
+                <button type="submit" onclick="phone_number_validate " class=" submit-btn">Register</button>   
             </form>
         </div>
     </div>  
-    <div class="hellobox" >
-        <h1> Register Here </h1>
-    </div>
     <br>
     <br>
 
