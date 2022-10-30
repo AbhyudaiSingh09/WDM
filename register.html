@@ -41,7 +41,7 @@
                 </div> 
                 <div class = "tooltip">
                     <input type= "text"  id="s_name"class="input-field" placeholder="Street Name" required>
-                    <span class="tooltiptext"> Only alphabets A-Z or a-z accepted </span>
+                    <span class="tooltiptext"> Only 0-9,A-Z or a-z accepted </span>
                 </div>
                 <div class = "tooltip">
                     <input type= "text"  id = "apt_id" class="input-field" placeholder="Apartment" required>
@@ -100,14 +100,47 @@
                     </span>
                 </div>
                 <br>
-                <input type= "checkbox"  class="check-box"><span>I agree to the terms & conditions</span> 
                 <button type="submit" onclick="check_all()" class=" submit-btn">Register</button>   
             </form>
         </div>
     </div>  
+    <script>
+        var password = document.getElementById("password_id");
+        password.addEventListener("mouseup",e=>{
+            phone_number_validate();
+        });
+    </script>
+    <script>
+        var emailid = document.getElementById("email_id");
+        emailid.addEventListener("mouseup",e=>{
+            email_validate();
+        });
+    </script>
+    <script>
+        var c_id= document.getElementById("city_id");
+        c_id.addEventListener("mouseup",e=>{
+            city_validate();
+        });
+    </script>
+    <script>
+        var apartment_id= document.getElementById("apt_id");
+        apartment_id.addEventListener("mouseup",e=>{
+            apartment_validate();
+        });
+    </script>
+    <script>
+        var street_name = document.getElementById("sname");
+        street_name.addEventListener("mouseup",e=>{
+            sname_validate();
+        });
+    </script>
+    <script>
+       var last_name = document.getElementById("lname");
+        last_name.addEventListener("mouseup",e=>{
+            lname_validate();
+        });
+    </script>
     <br>
     <br>
-
-    
 </body>      
 </html>     

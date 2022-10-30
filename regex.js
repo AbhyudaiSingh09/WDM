@@ -1,17 +1,9 @@
-//var phone_number = document.getElementById("ph_number");
-//const test = document.getElementById('form_id');
-//window.onload = test.addEventListener('submit',e=>{
-  //  phone_number_validate();
-//});
-
-
 function phone_number_validate()
 {
     console.log("phone number validate");
     var phone_number = document.getElementById("ph_number");
     const ph_value= phone_number.value.trim();
-    var ph_regx= /^\d{3}-?\d{3}-?\d{4}$/;
-    if(ph_regx.test(ph_value))
+    if(/^\d{3}-?\d{3}-?\d{4}$/.test(ph_value))
     {
         console.log("matched phone number ");
     }
@@ -20,8 +12,13 @@ function phone_number_validate()
         alert("Incorrect number  format");
         
     }
-
 }
+
+var phone_number = document.getElementById("ph_number");
+phone_number.addEventListener("mouseup",e=>{
+    phone_number_validate();
+});
+
 
 function fname_validate()
 {
@@ -35,9 +32,15 @@ function fname_validate()
     }
     else
     {
-        alert("Incorrect fname format");
+        ("Incorrect foramt for first name ");
     }
 }
+
+var f_name = document.getElementById("fname");
+f_name.addEventListener("mousedown",e=>{
+    fname_validate();   
+});
+
 
 function lname_validate()
 {
@@ -51,9 +54,14 @@ function lname_validate()
     }
     else
     {
-        alert("Incorrect lname format");
+        alert("Incorrect format for last name");
     }
 }
+
+var last_name = document.getElementById("lname");
+last_name.addEventListener("mouseup",e=>{
+    lname_validate();
+});
 
 
 function sname_validate()
@@ -72,6 +80,12 @@ function sname_validate()
     }
 }
 
+var street_name = document.getElementById("sname");
+street_name.addEventListener("mouseup",e=>{
+    sname_validate();
+});
+
+
 function apartment_validate()
 {
     console.log("apartment_validate")
@@ -88,6 +102,12 @@ function apartment_validate()
     }
 }
 
+var apartment_id= document.getElementById("apt_id");
+apartment_id.addEventListener("mouseup",e=>{
+    apartment_validate();
+});
+
+
 function city_validate()
 {
     console.log("city_validate")
@@ -103,6 +123,11 @@ function city_validate()
         alert("Incorrect city  format");
     }
 }
+
+var c_id= document.getElementById("city_id");
+c_id.addEventListener("mouseup",e=>{
+    city_validate();
+});
 
 function state_validate()
 {
@@ -169,6 +194,11 @@ function email_validate()
     }
 }
 
+var emailid = document.getElementById("email_id");
+emailid.addEventListener("mouseup",e=>{
+    email_validate();
+});
+
 function password_validate()
 {
     console.log("password_validate")
@@ -186,19 +216,26 @@ function password_validate()
     }
 }
 
+var password = document.getElementById("password_id");
+password.addEventListener("mouseup",e=>{
+    phone_number_validate();
+});
+
+
 function check_all()
 
 {
     phone_number_validate();
+    fname_validate();
+    lname_validate();
+    sname_validate();
+    apartment_validate();
+    city_validate();
+    state_validate();
+    zip_validate();
+    DOB_validate();
+    email_validate();
+    password_validate();
 }
-    //fname_validate();
-    //lname_validate();
-    //sname_validate();
-    //apartment_validate();
-    //city_validate();
-    //state_validate();
-    //zip_validate();
-    //DOB_validate();
-    //email_validate();
-    //password_validate();
+
 
