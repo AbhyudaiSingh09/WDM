@@ -83,7 +83,8 @@
             <form>
                 <input type="text" placeholder="Full Name">
                 <input type="email" placeholder="Email" required>
-                <textarea rows="4" cols="60" onkeypress="auto_grow(this);" onkeyup="auto_grow(this);" style="margin: top 20px; resize:none;overflow:hidden;"></textarea>
+                <textarea rows="4" cols="60" id="textarea_id" maxlength ="205" onkeypress="auto_grow(this);" onkeyup="auto_grow(this);" mouseup="textarea_check()" style="margin: top 20px; resize:none;overflow:hidden; "></textarea>
+                <span id=" textcount "> 0 </span> 
                 <H3>Select time to callback</H3>
                 <H6>Choose your Day type</H6>
                 <input type="radio"  value="Weekday" name="Day1" onclick="onLoad()">
@@ -115,27 +116,53 @@
                 }
 
                 function onLoad(){
-                    var group1 = document.getElementById("group1")
+                    var group1 = document.getElementById("group1");
                     group1.classList.remove('hide');
                     group1.classList.add('show');
 
-                    var group2 = document.getElementById("group2")
+                    var group2 = document.getElementById("group2");
                     group2.classList.remove('show');
                     group2.classList.add('hide');
                 }
 
                 function onLoad2(){
-                    var group2 = document.getElementById("group2")
+                    var group2 = document.getElementById("group2");
                     group2.classList.remove('hide');
                     group2.classList.add('show');
 
-                    var group1 = document.getElementById("group1")
+                    var group1 = document.getElementById("group1");
                     group1.classList.remove('show');
                     group1.classList.add('hide');
                 }
 
 
             </script>    
+            <script>
+                var textarea = document.getElementById("textarea_id");
+                console.log(textarea)
+                textarea.addEventListener("mouseup",e=>{
+                    textarea_check();
+                    console.log("test")
+                });
+
+                function textarea_check() 
+                {   
+                    var textarea = document.getElementById("textarea_id");
+                    console.log(textarea )
+                    console.log("hello hello ")
+                    const text_id= textarea.value.trim();
+                    console.log(text_id)
+                    var text_id_regx= /^[a-zA-Z0-9]{0,200}$/;
+                    if(text_id_regx.test(text_id))
+                    {       
+                    console.log("matched text area ");
+                    }      
+                    else
+                    {
+                        alert("No more than 200 character");
+                    }
+                }   
+            </script>
         </div>
         <div class="item3">
             <p>Our Officials will contact you in next 24 hours.</p>
