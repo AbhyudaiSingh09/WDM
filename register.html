@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>   
+    <title> Register </title>
+    <meta charset="UTF-8">  
+    <link rel="stylesheet" href="stylesheet2.css" />
+    <script defer src="./regex.js"></script>
+</head> 
+<body>
+    <div class="topnav">
+        <a href= "homepage.html">Home</a>
+        <a href= "contactus.html">Contact Us</a>
+        <a href= "scheduleappointment.html">Schedule Appointment</a>
+        <a href="About.html">About</a>
+    </div>
+
+    <div class="homepagebox">
+        <H2> Car Zone</H2>
+    </div>  
+
+    <div class= "hero">
+        <div class= "form-box">
+            <div class="button-box">
+                <div id="btn"></div>
+                    <button type="button" class=" toggle-btn">Register</button>
+                    <a href="homepage.html"><button class=" toggle-btn">Login</button></a>
+            </div>
+            <div class="social-icons" >
+                <a href= "https://www.facebook.com"><img src= "static/fbimage.jpeg" width="30" height="30"></a>
+                <a href="https://www.google.com"><img src= "static/google image.png" width="30" height="30"></a>
+                <a href="https://www.twitter.com"><img src= "static/twitterimage.png" width="30" height="30"></a>
+            </div>
+            <form id="form_id" class= "input-group"> 
+                <div class = "tooltip">
+                    <input id="fname" type= "text"  class="input-field" placeholder="First Name" required /> 
+                    <span class="tooltiptext"> Only alphabets A-Z or a-z accepted </span>
+                </div>
+                <div class = "tooltip">
+                    <input id="lname" type= "text"  class="input-field" placeholder="Last Name" required>
+                    <span class="tooltiptext"> Only alphabets A-Z or a-z accepted </span>
+                </div> 
+                <div class = "tooltip">
+                    <input type= "text"  id="s_name"class="input-field" placeholder="Street Name" required>
+                    <span class="tooltiptext"> Only 0-9,A-Z or a-z accepted </span>
+                </div>
+                <div class = "tooltip">
+                    <input type= "text"  id = "apt_id" class="input-field" placeholder="Apartment" required>
+                    <span class="tooltiptext"> Only 0-9, a-z and A-Z  accepted </span>
+                </div>
+                <div class = "tooltip">
+                    <input type= "text" id ="city_id" class="input-field" placeholder="City" required>
+                    <span class="tooltiptext"> Only alphabets A-Z or a-z accepted </span>
+                </div>        
+                <div class = "tooltip">
+                    <input type= "text" id="state_id"  class="input-field" placeholder="State" required>
+                    <span class="tooltiptext"> Only alphabets A-Z or a-z accepted </span>
+                </div>
+                <div class = "tooltip">
+                    <input type= "number" id="zip_id"  class="input-field" placeholder="Area Code(Zip Code)" required>
+                    <span class="tooltiptext"> Only 0-9 number accepted </span>
+                </div>
+                <div class = "tooltip">    
+                    <input type= "tel"  id = "ph_number" class="input-field" placeholder="Phone Number" pattern =" [0-9]{3}-[0-9]{3}-[0-9]{4} "required>
+                    <span class="tooltiptext"> Only 10 digits accepted in format 123-123-1234 </span>
+                </div>
+                <br>
+                <div class = "tooltip">       
+                    <input type= "text"  id = "dob_id" class="input-field" placeholder="D.O.B" required>
+                    <span class="tooltiptext"> Date accepted in format mm/dd/yyyy </span>
+                </div>
+                <br>
+                <div class = "tooltip">    
+                    <input type= "email" id="email_id" class="input-field" placeholder="Email Id" required>
+                    <span class="tooltiptext"> 
+                        <ul>
+                            <li> Uppercase and lowercase letters (A-Z and a-z) </li>
+                            <li>Numeric characters (0-9) </li>
+                            <li> Special characters - ! # $ % & ' * + - / = ? ^ _ ` { | } ~ </li>
+                            <li>Period,  dot,  or  full  stop  (.)  with  the  condition  that  it 
+                                cannot be the first or last letter of the email and cannot 
+                                repeat one after another </li>
+                            <li>A valid domain name [for example com, org, net, in, us, 
+                                info]. </li>    
+                        </ul>             
+                    </span>
+                </div>
+                <div class = "tooltip">    
+                    <input type= "password" id="password_id" class="input-field" placeholder="Password" required>
+                    <span class="tooltiptext"> 
+                        <ul>
+                            <li> A password should be alphanumeric.  </li>
+                            <li>First letter of the password should be capital.  </li>
+                            <li> Special characters - ! # $ % & ' * + - / = ? ^ _ ` { | } ~ </li>
+                            <li>Password  must  contain  a  special  character  (@,  $,  !,  &, 
+                                etc).</li>
+                            <li>Password length must be greater than 8 characters. </li>    
+                            <li>The password fields should not be empty</li>
+                            <li>Password format A a special character digit<li>
+                        </ul>             
+                    </span>
+                </div>
+                <br>
+                <button type="submit" onclick="check_all()" class=" submit-btn">Register</button>   
+            </form>
+        </div>
+    </div>  
+    <script>
+        var password = document.getElementById("password_id");
+        password.addEventListener("mouseup",e=>{
+            phone_number_validate();
+        });
+    </script>
+    <script>
+        var emailid = document.getElementById("email_id");
+        emailid.addEventListener("mouseup",e=>{
+            email_validate();
+        });
+    </script>
+    <script>
+        var c_id= document.getElementById("city_id");
+        c_id.addEventListener("mouseup",e=>{
+            city_validate();
+        });
+    </script>
+    <script>
+        var apartment_id= document.getElementById("apt_id");
+        apartment_id.addEventListener("mouseup",e=>{
+            apartment_validate();
+        });
+    </script>
+    <script>
+        var street_name = document.getElementById("sname");
+        street_name.addEventListener("mouseup",e=>{
+            sname_validate();
+        });
+    </script>
+    <script>
+       var last_name = document.getElementById("lname");
+        last_name.addEventListener("mouseup",e=>{
+            lname_validate();
+        });
+    </script>
+    <br>
+    <br>
+</body>      
+</html>     

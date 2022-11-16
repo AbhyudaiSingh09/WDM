@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Service Appointment</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="Appointment.css">
+    <style>
+        h1{
+            color: blue;
+            margin: 50px 0 0 0;
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h1 id = "heading1"><strong>Book an appointment</strong></h1>
+        <p style="text-align:center">Book an appointment to visit our store and browse through a collection of cars</p>
+        <br>
+        <br>
+    </div>
+    <br>
+    <form action="https://www.google.com">
+        <div class="appointmentbox">
+            <div class="details">
+                <br>
+                <h4>Fill the form to schedule an appointment</h4>
+                <p><label for="name">Name*:</label>
+                    <input type="text" id="name" name="user_name" placeholder="Full Name" required>
+                </p>
+                <p><label for="mail">Email*:</label>
+                    <input type="email" id="mail" name="user_email" placeholder="Email Address" required>
+                </p>
+                <p><label for="tel">Number:</label>
+                    <input type="tel" id="tel" placeholder="Phone Number" name="user_num">
+                </p>
+                <p><label for="tel">Addr*:</label>
+                    <input type="text" id="address" name="address" placeholder="Address" required>
+                </p>
+                <p><label for="ApptDateTime">Appointment date and time:</label></p>
+                <input type="datetime-local" id="ApptDateTime" name="Appointment Date and Time">
+                <p><button id="button" type="submit">Request For Appointment</button></p>
+            </div>
+        </div>
+    </form>
+    <p style="color:white">*Please choose a date and time from Monday to Friday 9am - 5pm.</p>
+</body>
+
+</html>

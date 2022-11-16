@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>   
+    <title> Assignment 1 </title>
+    <meta charset="UTF-8">  
+    <link rel="stylesheet" href="stylesheet2.css" />
+<style>
+
+    body{
+    background-color: #1c2331;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;   
+    }
+
+    .contact-H1{
+    color: aliceblue;
+    font-family: cursive;
+    text-align: center;
+    }
+
+
+    .item1{ grid-area: header;}
+    .tem2{ grid-area: main;}
+    .item3{ grid-area: footer;}
+
+    .grid-container{
+        display: grid;
+        grid-template-areas: 
+        'Top Top Top Top Top Top'
+        'Middle Middle Middle Middle Middle Middle'
+        'Bottom Bottom Bottom Bottom Bottom Bottom';
+        gap: 10px;
+        background-color: #fff;
+        padding: 10px;
+    }
+
+    .grid-container> div{
+        background-color: #fff;
+        text-align: center;
+        padding: 20px 0;
+        font-size: 30px;
+    }
+
+    .grid-container input{
+        width:100%;
+        padding: .5em;
+        border-radius: 2em;
+    }
+
+    .grid-container button{
+        width:100%;
+        padding: .5em;
+        border-radius: 2em;
+        margin: 2%;
+        cursor: pointer;
+        background-color: black;
+        color: #fff;
+    }
+
+    .grid-container p{
+        font-family: cursive;
+    }
+
+    .hide{
+        display: none;
+    }
+
+    .show{
+        display: block;
+    }
+
+
+</style>
+</head>
+<body>
+    <header>
+        <H1 class="contact-H1"> Contact Us </H1>
+    </header>
+    <div class="grid-container">
+        <div class="item1"> </div>
+        <div class="item2"> 
+            <form>
+                <input type="text" placeholder="Full Name">
+                <input type="email" placeholder="Email" required>
+                <textarea rows="4" cols="60" id="textarea_id" maxlength ="205" onkeypress="auto_grow(this);" onkeyup="auto_grow(this);" mouseup="textarea_check()" style="margin: top 20px; resize:none;overflow:hidden; "></textarea>
+                <span id=" textcount "> 0 </span> 
+                <H3>Select time to callback</H3>
+                <H6>Choose your Day type</H6>
+                <input type="radio"  value="Weekday" name="Day1" onclick="onLoad()">
+                <label for="size1"> Weekday</label>
+                <input type="radio"  value="Weekend" name="Day2" onclick="onLoad2()">
+                <label for="size1"> Weekend</label>
+                <H6>Choose your Day</H6>
+                <div id="group1"  class="hide">
+                <select>
+                <option> Monday </option>
+                <option> Tuesday </option>
+                <option> Wednesday </option>
+                <option> Thursday </option>  
+                </select>
+                </div>
+                <div id="group2"  class="hide">
+                <select>
+                <option> Saturday </option>
+                <option> Sunday </option>
+                </select>
+                </div>
+                <button type="submit" value="Submit"> Submit </button> 
+            </form>
+            <!--10=text arear fit as per text growth -->
+            <script type="text/javascript">
+                function auto_grow(element){
+                    element.style.height="5px";
+                    element.style.height=(element.scrollHeight)+"px";
+                }
+
+                function onLoad(){
+                    var group1 = document.getElementById("group1");
+                    group1.classList.remove('hide');
+                    group1.classList.add('show');
+
+                    var group2 = document.getElementById("group2");
+                    group2.classList.remove('show');
+                    group2.classList.add('hide');
+                }
+
+                function onLoad2(){
+                    var group2 = document.getElementById("group2");
+                    group2.classList.remove('hide');
+                    group2.classList.add('show');
+
+                    var group1 = document.getElementById("group1");
+                    group1.classList.remove('show');
+                    group1.classList.add('hide');
+                }
+
+
+            </script>    
+            <script>
+                var textarea = document.getElementById("textarea_id");
+                console.log(textarea)
+                textarea.addEventListener("mouseup",e=>{
+                    textarea_check();
+                    console.log("test")
+                });
+
+                function textarea_check() 
+                {   
+                    var textarea = document.getElementById("textarea_id");
+                    console.log(textarea )
+                    console.log("hello hello ")
+                    const text_id= textarea.value.trim();
+                    console.log(text_id)
+                    var text_id_regx= /^[a-zA-Z0-9]{0,200}$/;
+                    if(text_id_regx.test(text_id))
+                    {       
+                    console.log("matched text area ");
+                    }      
+                    else
+                    {
+                        alert("No more than 200 character");
+                    }
+                }   
+            </script>
+        </div>
+        <div class="item3">
+            <p>Our Officials will contact you in next 24 hours.</p>
+        </div>
+
+
+    <footer>
+
+        
+
+    </footer>
+</body>
+</html>
